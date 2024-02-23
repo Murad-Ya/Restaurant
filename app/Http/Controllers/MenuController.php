@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -29,4 +30,16 @@ class MenuController extends Controller
            'massage' => 'Меню создано'
         ]);
     }
+    public function destroy(int $id)
+    {
+        try {
+            Restaurant::destroy($id);
+            return response()->json([
+                'Меню удален'
+            ]);
+        }catch (\Exception $exception) {
+            return response()->json([
+                'massage' => $exception->getMessage()
+            ]);
+        }
 }

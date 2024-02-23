@@ -22,7 +22,7 @@ Route::prefix('restaurant')->group(function () {
     Route::get('/', [\App\Http\Controllers\RestaurantController::class , 'index']);
     Route::post('/store' , [\App\Http\Controllers\RestaurantController::class , 'store']);
     Route::get('show/{id}', [\App\Http\Controllers\RestaurantController::class , 'show']);
-    Route::delete('show/{id}', [\App\Http\Controllers\RestaurantController::class , 'destroy']);
+    Route::delete('delete/{id}', [\App\Http\Controllers\RestaurantController::class , 'destroy']);
 
 });
 
