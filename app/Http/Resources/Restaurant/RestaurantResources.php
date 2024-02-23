@@ -13,6 +13,6 @@ class RestaurantResources extends JsonResource
      */
     public function toArray(Request $request)
     {
-        return RestaurantResource::collection($this->resource);
+        return RestaurantShortResource::collection($this->resource);
     }
 }
